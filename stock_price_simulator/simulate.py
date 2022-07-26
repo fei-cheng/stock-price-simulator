@@ -13,8 +13,8 @@ def simulate(ticker, price_df, trading_dates=None, num_of_simulation=5):
     pct_change_std = pct_change.std()
 
     if trading_dates is None:
-        # Simulate the stock price for the following year from today
-        start_time = datetime.now()
+        # Simulate the stock price for the following year
+        start_time = price_df["Date"].max()
         end_time = start_time.replace(year=start_time.year + 1)
 
         start_date = start_time.strftime("%Y-%m-%d")

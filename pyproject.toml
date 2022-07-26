@@ -2,7 +2,7 @@
 name = "stock-price-simulator"
 version = "0.1.0"
 description = ""
-authors = ["fei.cheng <fei.cheng@oliverwyman.com>"]
+authors = ["fei.cheng <chengfei0913@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -10,6 +10,7 @@ numpy = "^1.23.1"
 pandas = "^1.4.3"
 yfinance = "^0.1.74"
 pandas-market-calendars = "^3.5"
+python-dotenv = "^0.20.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
