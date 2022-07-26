@@ -11,6 +11,9 @@ pandas = "^1.4.3"
 yfinance = "^0.1.74"
 pandas-market-calendars = "^3.5"
 python-dotenv = "^0.20.0"
+azure-batch = "^12.0.0"
+azure-core = "^1.24.2"
+azure-storage-blob = "^12.13.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
