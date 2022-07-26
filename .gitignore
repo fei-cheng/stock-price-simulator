@@ -32,3 +32,6 @@ Thumbs.db
 *.wmv
 
 .env
+
+# jupyter notebook
+.ipynb_checkpoints
