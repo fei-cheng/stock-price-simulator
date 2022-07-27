@@ -38,7 +38,11 @@ poetry run python az_batch/run.py
 You can also use docker to run the simulation, so that you can skip the poetry installation which is frustrating sometime.
 1. Build the image:
 
-    ```docker build -t stock_price_simulator .```
+    ```
+    docker build -t stock_price_simulator .
+    ```
 2. Run in a container:
 
-    ```docker run stock_price_simulator```
+    ```
+    docker run stock_price_simulator
+    ```
