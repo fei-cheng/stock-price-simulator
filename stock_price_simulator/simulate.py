@@ -15,6 +15,8 @@ def simulate(ticker, price_df, trading_dates=None, num_of_simulation=5):
     if trading_dates is None:
         # Simulate the stock price for the following year
         start_time = price_df["Date"].max()
+        if isinstance(start_time, str):
+            start_time = datetime.strptime(start_time, "%Y-%m-%d")
         end_time = start_time.replace(year=start_time.year + 1)
 
         start_date = start_time.strftime("%Y-%m-%d")
@@ -29,7 +31,7 @@ def simulate(ticker, price_df, trading_dates=None, num_of_simulation=5):
                 prev_price = price_df["Adj Close"].iat[-1]
             else:
                 prev_price = ticker_price_list[-1]["price"]
-                
+
             price = prev_price * (1 + np.random.normal(0, pct_change_std))
             ticker_price_list.append(
                 {

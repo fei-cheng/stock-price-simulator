@@ -1,36 +1,13 @@
 from multiprocessing import Pool, cpu_count
 
 import pandas as pd
-import yfinance as yf
 
-from simulate import simulate
+from stock_price_simulator.simulate import simulate
+from stock_price_simulator.ticker import download_ticker_prices
 
 
 def run():
-    ticker_symbols = [
-        "AMD",
-        "AAPL",
-        "AMZN",
-        "META",
-        "MSFT",
-        "NVDA",
-        "PYPL",
-        "TSLA",
-        "TWTR",
-    ]
-
-    ticker_price_df = {}
-    for ticker in ticker_symbols:
-        price_df = yf.download(
-            ticker,
-            start="2020-01-01",
-            end="2021-12-31",
-        )
-        if price_df.empty:  # in case failed download
-            continue
-        price_df = price_df.reset_index()
-        price_df.insert(0, "ticker", ticker)
-        ticker_price_df[ticker] = price_df
+    ticker_price_df = download_ticker_prices()
 
     number_of_processes = max(1, cpu_count() - 1)
     pool = Pool(processes=number_of_processes)

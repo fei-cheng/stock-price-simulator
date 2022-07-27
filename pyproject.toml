@@ -3,8 +3,12 @@ name = "stock-price-simulator"
 version = "0.1.0"
 description = ""
 authors = ["fei.cheng <chengfei0913@gmail.com>"]
+packages = [
+    { include = "stock_price_simulator" },
+]
 
 [tool.poetry.dependencies]
+click = "^8.1.3"
 python = "^3.8"
 numpy = "^1.23.1"
 pandas = "^1.4.3"
@@ -19,6 +23,8 @@ azure-storage-blob = "^12.13.0"
 pytest = "^5.2"
 jupyter = "^1.0.0"
 ipykernel = "^6.15.1"
+black = "^22.6.0"
+isort = "^5.10.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
