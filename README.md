@@ -21,3 +21,24 @@ The simulation result might be not good as it is actually not the real focus of 
 ## Installation
 1. Install poetry(if it doesn't exist): `pip install poetry`
 2. Install dependencies: `poetry install`
+
+## Run
+
+### Use multiprocessing
+```
+poetry run python stock_price_simulator/run.py
+```
+
+### Use Azure Batch
+```
+poetry run python az_batch/run.py
+```
+
+## Docker
+You can also use docker to run the simulation, so that you can skip the poetry installation which is frustrating sometime.
+1. Build the image:
+
+    ```docker build -t stock_price_simulator .```
+2. Run in a container:
+
+    ```docker run stock_price_simulator```
